@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d57b775-2ac0-45fd-b778-6a03d4485e86" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tg/Telegram-Scraper-Adder/Adder.py" beforeDir="false" afterPath="$PROJECT_DIR$/tg/Telegram-Scraper-Adder/Adder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tg/Telegram-Scraper-Adder_Channel-Member-Scraper/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tg/Telegram-Scraper-Adder_Channel-Member-Scraper/scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tg/Telegram-Scraper-Adder_Channel-Member-Scraper/vars.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tg/Telegram-Scraper-Adder_Channel-Member-Scraper/vars.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/tg/Telegram-Scraper-Adder_Channel-Member-Scraper" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MgFiqJhre1yK6lYLDAxJqN3GBp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
+    ]
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d57b775-2ac0-45fd-b778-6a03d4485e86" name="Changes" comment="" />
+      <created>1678181451535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678181451535</updated>
+    </task>
+    <servers />
+  </component>
+</project>
