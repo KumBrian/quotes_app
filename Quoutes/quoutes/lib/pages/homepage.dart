@@ -28,23 +28,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late Animation authorCardAnimation;
   SwiperController swiperController = SwiperController();
 
-  late List<Quote> quotes = [];
+  late List quotes = [];
   late List<Quote> likedQuotes = [];
   bool isWaiting = false;
   late Quote currentQuote;
 
-  void getQuotes(int max) async {
-    isWaiting = true;
-    for (int i = 0; i < max; i++) {
-      var data = await getResponse(10);
-
-      for (int i = 0; i < 10; i++) {
-        setState(() {
-          quotes.add(Quote(author: data[i]['author'], quote: data[i]['quote']));
-        });
+  void getQuotes() async {
+    setState(() {
+      isWaiting = true;
+    });
+    final result = [];
+    for (int i = 0; i < 5; i++) {
+      final response = await fetchQuote();
+      if (response.statusCode == 200) {
+        final quote = await decodeQuote(response);
+        result.add(quote);
       }
     }
-    isWaiting = false;
+    setState(() {
+      isWaiting = false;
+      quotes = result;
+    });
   }
 
   void shuffle() {
@@ -59,7 +63,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    getQuotes(2);
+    getQuotes();
     authorCardController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 500));
     authorCardAnimation = Tween(begin: 0.0, end: pi / 2).animate(
@@ -202,7 +206,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           }
         },
         isLiked:
-            quotes.isNotEmpty ? quotes[swiperController.index].isLiked : false,
+            quotes.isEmpty ? false : quotes[swiperController.index].isLiked,
       ),
       CustomIconButton(
         icon: Icons.copy_rounded,
@@ -225,10 +229,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           padding: const EdgeInsets.only(right: 16.0),
           child: GestureDetector(
             onTap: () {
-              setState(() {
-                quotes.clear();
-                getQuotes(2);
-              });
+              try {
+                setState(() {
+                  quotes.clear();
+                  getQuotes();
+                });
+              } catch (e) {
+                print(e);
+              }
             },
             child: const Icon(
               CupertinoIcons.refresh_circled,
@@ -321,7 +329,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 16.0, vertical: 16.0),
                 child: GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                   child: const Icon(
                     Icons.cancel_sharp,
                     size: 50,
